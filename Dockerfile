@@ -1,7 +1,7 @@
-FROM ubuntu:20.04
+FROM debian:buster-slim
 MAINTAINER republicofdalmatia
 
-RUN apt-get update && apt-get install -y dnsmasq
+RUN apt update && apt install -y dnsmasq && apt autoremove -y && apt autoclean && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 53
 
